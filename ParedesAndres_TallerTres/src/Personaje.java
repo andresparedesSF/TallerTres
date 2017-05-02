@@ -14,6 +14,7 @@ public abstract class Personaje {
 		this.x = x;
 		this.y = y;
 		this.ref = ref;
+		pos = new PVector(x,y);
 	}
 	
 	public abstract void pintar();
