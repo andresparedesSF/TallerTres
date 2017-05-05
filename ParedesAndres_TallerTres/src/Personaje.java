@@ -15,12 +15,26 @@ public abstract class Personaje {
 		this.y = y;
 		this.ref = ref;
 		pos = new PVector(x,y);
+		dir = new PVector(app.random(5,10),app.random(5,10));
 	}
 	
 	public abstract void pintar();
 	
 	public void mover(){
-		
+	    pos.add(dir);
+	    
+	    if(pos.x>app.width-25){
+	      dir.x*=-1;
+	    }
+	    if(pos.x<25){
+	      dir.x*=-1;
+	    }
+	     if(pos.y>app.height-25){
+	      dir.y*=-1;
+	    }
+	    if(pos.y<25){
+	      dir.y*=-1;
+	    }
 	}
 
 }

@@ -25,6 +25,7 @@ public class MainApp extends PApplet{
 	public void draw() {
 		image(fondo,0,0);
 		m.pintar();
+		m.mover();
 	}
 
 }

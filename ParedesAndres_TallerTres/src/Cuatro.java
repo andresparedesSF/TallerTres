@@ -12,7 +12,7 @@ public class Cuatro extends Personaje{
 	
 	public void pintar(){
 		app.imageMode(app.CENTER);
-		app.image(img, x, y);
+		app.image(img, pos.x, pos.y);
 		app.imageMode(app.CORNER);
 	}
 }

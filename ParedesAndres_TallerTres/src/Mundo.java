@@ -12,7 +12,7 @@ public class Mundo {
 		this.app = app;
 		u = new Uno(app,100,100,this);
 		per.add(new Uno(app,200,100,this));
-		per.add(new Uno(app,300,100,this));
+		per.add(new Cuatro(app,300,100,this));
 //		for(int i = 0; i < 5; i++){
 //			per.add(new Uno(app,(i*100) + 100,100,this));
 //		}
@@ -25,5 +25,22 @@ public class Mundo {
 			p.pintar();
 		}
 	}
+	
+	public void mover(){
+		for (int i = 0; i < per.size(); i++) {
+			Personaje p = per.get(i);
+			p.mover();
+		}
+	}
+	
+	public ArrayList<Personaje> getPer() {
+		return per;
+	}
+
+	public void setPer(ArrayList<Personaje> per) {
+		this.per = per;
+	}
+
+	
 
 }
