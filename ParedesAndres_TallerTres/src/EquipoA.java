@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 import processing.core.PVector;
 
@@ -5,6 +7,7 @@ public abstract class EquipoA extends Thread{
 	
 	protected PApplet app;
 	protected int x,y;
+	protected int contador;
 	protected PVector pos;
 	protected PVector dir;
 	protected Mundo ref;
@@ -18,6 +21,7 @@ public abstract class EquipoA extends Thread{
 		isAlive = true;
 		pos = new PVector(x,y);
 		dir = new PVector(app.random(1,3),app.random(1,3));
+		contador = 0;
 	}
 	
 	public abstract void pintar();
@@ -27,7 +31,9 @@ public abstract class EquipoA extends Thread{
 		while(isAlive){
   			
   			//tocarObstaculo();
-  			mover();
+			mover();
+			//nivelPoder();
+  			
   			
   			try {
 				Thread.sleep(15);
@@ -38,6 +44,8 @@ public abstract class EquipoA extends Thread{
   			
   		}
 	}
+	
+
 	
 	public void mover(){
 	    pos.add(dir);

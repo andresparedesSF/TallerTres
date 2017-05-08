@@ -7,9 +7,9 @@ public class Mundo {
 	private PApplet app;
 	private ArrayList<EquipoA> equiA = new ArrayList<EquipoA>();
 	private ArrayList<EquipoB> equiB = new ArrayList<EquipoB>();
+	private ArrayList<Elemento> ele = new ArrayList<Elemento>();
 	private boolean agregar =  true;
 	private boolean agregar2 = true;
-	private Uno u;
 	
 	public Mundo(PApplet app) {
 		this.app = app;
@@ -28,6 +28,12 @@ public class Mundo {
 			EquipoB p = equiB.get(i);
 			p.start();
 		}
+		
+		for (int i = 0; i < 10; i++) {
+			ele.add(new Elemento(app));
+			//Elemento e = ele.get(i);
+			//e.start();
+		}
 	}
 	
 	public void pintar(){
@@ -39,6 +45,11 @@ public class Mundo {
 		for (int i = 0; i < equiB.size(); i++) {
 			EquipoB p = equiB.get(i);
 			p.pintar();
+		}
+		
+		for (int i = 0; i < ele.size(); i++) {
+			Elemento e = ele.get(i);
+			e.pintar();
 		}
 	}
 	
@@ -67,6 +78,32 @@ public class Mundo {
 		}
 		
 	}
+
+	public ArrayList<EquipoA> getEquiA() {
+		return equiA;
+	}
+
+	public void setEquiA(ArrayList<EquipoA> equiA) {
+		this.equiA = equiA;
+	}
+
+	public ArrayList<EquipoB> getEquiB() {
+		return equiB;
+	}
+
+	public void setEquiB(ArrayList<EquipoB> equiB) {
+		this.equiB = equiB;
+	}
+
+	public ArrayList<Elemento> getEle() {
+		return ele;
+	}
+
+	public void setEle(ArrayList<Elemento> ele) {
+		this.ele = ele;
+	}
+	
+	
 	
 
 }
