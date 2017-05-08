@@ -1,7 +1,7 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class Lenny extends Personaje{
+public class Lenny extends EquipoB{
 
 	private PImage img;
 	
@@ -12,7 +12,7 @@ public class Lenny extends Personaje{
 	
 	public void pintar(){
 		app.imageMode(app.CENTER);
-		app.image(img, x, y);
+		app.image(img, pos.x, pos.y);
 		app.imageMode(app.CORNER);
 	}
 }

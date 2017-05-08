@@ -1,7 +1,7 @@
 import processing.core.PApplet;
 import processing.core.PVector;
 
-public abstract class Personaje extends Thread{
+public abstract class EquipoA extends Thread{
 	
 	protected PApplet app;
 	protected int x,y;
@@ -10,7 +10,7 @@ public abstract class Personaje extends Thread{
 	protected Mundo ref;
 	protected boolean isAlive;
 	
-	public Personaje(PApplet app, int x, int y, Mundo ref) {
+	public EquipoA(PApplet app, int x, int y, Mundo ref) {
 		this.app = app;
 		this.x = x;
 		this.y = y;

@@ -25,7 +25,11 @@ public class MainApp extends PApplet{
 	public void draw() {
 		image(fondo,0,0);
 		m.pintar();
-		m.mover();
 	}
 
+	@Override
+	public void mousePressed() {
+		println(mouseX + "," + mouseY);
+		m.teclado();
+	}
 }

@@ -1,7 +1,7 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class Cuatro extends Personaje{
+public class Cuatro extends EquipoA{
 
 	private PImage img;
 	
