@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Mundo {
 
@@ -9,10 +10,14 @@ public class Mundo {
 	private ArrayList<EquipoB> equiB = new ArrayList<EquipoB>();
 	private ArrayList<Elemento> ele = new ArrayList<Elemento>();
 	private boolean agregar = true;
+	private PImage fondo;
 	private boolean agregar2 = true;
+	private int pantalla;
 
 	public Mundo(PApplet app) {
 		this.app = app;
+		pantalla = 0;
+		fondo = app.loadImage("../data/Fondo.png");
 		equiA.add(new Uno(app, 147, 235, this));
 		equiA.add(new Cuatro(app, 147, 335, this));
 		equiA.add(new Cinco(app, 147, 435, this));
@@ -37,23 +42,42 @@ public class Mundo {
 	}
 
 	public void pintar() {
+		
+		switch(pantalla){
+		
+			case 0:
+				app.image(fondo, 0, 0);
+			break;
+		
+			
+			case 1:
+				for (int i = 0; i < equiA.size(); i++) {
+					EquipoA p = equiA.get(i);
+					p.pintar();
+				}
+
+				for (int i = 0; i < equiB.size(); i++) {
+					EquipoB p = equiB.get(i);
+					p.pintar();
+				}
+
+				for (int i = 0; i < ele.size(); i++) {
+					Elemento e = ele.get(i);
+					e.pintar();
+				}
+			break;
+		}
+		
 		destruir();
-		for (int i = 0; i < equiA.size(); i++) {
-			EquipoA p = equiA.get(i);
-			p.pintar();
-		}
-
-		for (int i = 0; i < equiB.size(); i++) {
-			EquipoB p = equiB.get(i);
-			p.pintar();
-		}
-
-		for (int i = 0; i < ele.size(); i++) {
-			Elemento e = ele.get(i);
-			e.pintar();
-		}
+		
 	}
 
+	public void teclas(){
+		if(app.keyCode == app.ENTER){
+			pantalla = 1;
+		}
+	}
+	
 	public void teclado() {
 
 		if (app.mouseX > 581 && app.mouseX < 621 && app.mouseY > 603 && app.mouseY < 640) {

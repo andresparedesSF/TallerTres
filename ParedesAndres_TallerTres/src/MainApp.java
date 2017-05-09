@@ -28,6 +28,11 @@ public class MainApp extends PApplet{
 	}
 
 	@Override
+	public void keyPressed() {
+		m.teclas();
+	}
+	
+	@Override
 	public void mousePressed() {
 		println(mouseX + "," + mouseY);
 		m.teclado();
