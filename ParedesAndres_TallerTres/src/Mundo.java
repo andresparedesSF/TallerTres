@@ -51,6 +51,9 @@ public class Mundo {
 		
 			
 			case 1:
+				
+			if(pantalla == 1){
+				
 				for (int i = 0; i < equiA.size(); i++) {
 					EquipoA p = equiA.get(i);
 					p.pintar();
@@ -65,6 +68,8 @@ public class Mundo {
 					Elemento e = ele.get(i);
 					e.pintar();
 				}
+				
+			}
 			break;
 		}
 		
@@ -95,6 +100,7 @@ public class Mundo {
 			}
 			equiA.clear();
 			equiB.clear();
+			ele.clear();
 //			for (int i = 0; i < equiA.size(); i++) {
 //				
 //			}
@@ -135,7 +141,7 @@ public class Mundo {
 		}
 
 		if (app.mouseX > 849 && app.mouseX < 925 && app.mouseY > 634 && app.mouseY < 688) {
-			System.out.println("estoy dentro de Cinco");
+			System.out.println("estoy dentro de Ashley");
 			if (agregar) {
 				EquipoB p = new Ashley(app, 1079, 235, this);
 				p.start();
@@ -146,7 +152,7 @@ public class Mundo {
 		}
 
 		if (app.mouseX > 940 && app.mouseX < 1000 && app.mouseY > 634 && app.mouseY < 688) {
-			System.out.println("estoy dentro de Cinco");
+			System.out.println("estoy dentro de Lenny");
 			if (agregar) {
 				EquipoB p = new Lenny(app, 1079, 235, this);
 				p.start();
@@ -157,13 +163,21 @@ public class Mundo {
 		}
 
 		if (app.mouseX > 1020 && app.mouseX < 1090 && app.mouseY > 634 && app.mouseY < 688) {
-			System.out.println("estoy dentro de Cinco");
+			System.out.println("estoy dentro de Bruce");
 			if (agregar) {
 				EquipoB p = new Bruce(app, 1079, 235, this);
 				p.start();
 				equiB.add(p);
 				// agregar2 = false;
 				// equiA.add(new Uno(app,147,235,this));
+			}
+		}
+		
+		if (app.mouseX > 748 && app.mouseX < 782 && app.mouseY > 645 && app.mouseY < 675) {
+			System.out.println("estoy dentro de crear elemento");
+			if (agregar) {
+				Elemento e = new Elemento(app);
+				ele.add(e);
 			}
 		}
 
